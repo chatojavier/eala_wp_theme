@@ -1,0 +1,126 @@
+.site-header {
+    .menu-btn {
+        height: 38px;
+        width: 42px;
+        cursor: pointer;
+        @apply transition-transform;
+        @apply duration-250;
+        @apply ease-in-out;
+        z-index: 40;
+        // right: 5vw;
+        // top: calc(5vw + 20px);
+        position: static;
+
+        &__burger {
+            position: relative;
+            right: 0;
+            top: 1.2rem;
+            width: 42px;
+            height: 7.5px;
+            background: #fff;
+            @apply transition-transform;
+            @apply duration-250;
+            @apply ease-in-out;
+            border-radius: 2px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -15px;
+                width: 42px;
+                height: 7.5px;
+                background: #fff;
+                @apply transition-transform;
+                @apply duration-250;
+                @apply ease-in-out;
+                border-radius: 2px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 15px;
+                width: 42px;
+                height: 7.5px;
+                background: #fff;
+                @apply transition-transform;
+                @apply duration-250;
+                @apply ease-in-out;
+                border-radius: 2px;
+            }
+
+            &.open {
+                transform: rotate(360deg);
+                background: transparent;
+
+                &::before {
+                    transform: translate(0, .92rem) rotate(45deg);
+                    background: white;
+                }
+
+                &::after {
+                    transform: translate(0, -.92rem) rotate(-45deg);
+                    background: white;
+
+                }
+            }
+        }
+    }
+    .nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        visibility: hidden;
+        z-index: 30;
+
+        &.open {
+            visibility: visible;
+        }
+
+        .menu-nav {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            @apply bg-red;
+            list-style-type: none;
+            transform: translateY(calc(-100% - 8rem));
+            @apply transition-transform;
+            @apply duration-250;
+            @apply ease-in-out;
+
+            &.open {
+                transform: translateY(0);
+            }
+
+            &__item {
+                color: $color-salmon-dark;
+                transform: translateX(100vw);
+                @apply transition-transform;
+                @apply duration-250;
+                @apply ease-in-out;
+
+                &.open {
+                    color: white;
+                    transform: translateX(0);
+                }
+
+                & > a.active {
+                    color: white;
+                }
+                a {
+                    display: flex;
+                    @apply transition-transform;
+                    @apply duration-250;
+                    @apply ease-in-out;
+                }
+            }
+        }
+
+    }
+
+    @for $i from 1 through 15 {
+        .menu-nav__item:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.15s;
+        }
+    }
+}

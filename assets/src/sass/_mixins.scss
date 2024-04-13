@@ -1,0 +1,55 @@
+$color-salmon-dark: #e56a54;
+$color-salmon-light: #ff8d6d;
+$color-gold-light: #d9c89e;
+$color-gold-dark: #a69f88;
+$color-gold-trans: #eee7d5;
+
+$avenir: 'Avenir', 'Helvetica', 'arial', 'sans-serif';
+$raleway: 'Raleway', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+
+@mixin transition-ease {
+    transition: all 0.25s ease-in-out;
+}
+@mixin vh-mobile($vh) {
+    height: calc(var(--vh, 1vh) * #{$vh});
+}
+@mixin raleway20 {
+    font-family: $raleway;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+@mixin raleway15 {
+    font-family: $raleway;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+@mixin avenir20-black {
+    font-family: $avenir;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+@mixin avenir32-black {
+    font-family: $avenir;
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+@mixin avenir13-light {
+    font-family: $avenir;
+    font-weight: 300;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+@mixin avenir12-light {
+    font-family: $avenir;
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: uppercase;
+}

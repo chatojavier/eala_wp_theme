@@ -1,0 +1,26 @@
+# Ignore core WordPress files
+wp-admin/
+wp-includes/
+
+# Ignore theme-plugin files
+plugins/
+
+# Ignore compiled assets
+dist/
+node_modules/
+assets/node_modules/
+assets/build/
+
+# Ignore development files
+*.log
+*.bak
+*.tmp
+
+# Ignore editor backup files
+*~
+*.swp
+*.swo
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
